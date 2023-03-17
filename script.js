@@ -1,4 +1,22 @@
 // Your Script here.
+function rot13(str){
+	let decoderStr='';
+	for(let i=0; i<str.length; i++){
+		const charCode=str.charCodeAt(i);
+		if(charCode>=65 && charCode<=90){
+			let decodedCharCode= charCode+13;
+			if(decodedCharCode>90){
+				decodedCharCode=65+(decodedCharCode-91);
+			}
+			decodedStr += String.fromCharCode(decodedCharCode);
+		}
+		else{
+			decodedStr += str.charAt(i);
+		}
+		}
+	return decodedStr;
+	}
+}
 
 const lookup = {
   'A': 'N','B': 'O','C': 'P','D': 'Q',
